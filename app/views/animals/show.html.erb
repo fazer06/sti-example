@@ -1,0 +1,13 @@
+<div class="well well-lg">
+
+	<h1>Hi, I'm a <%= @animal.race %>.</h1>
+	<p>
+		My name is <%= @animal.name %>
+		I'm <%= @animal.age %>
+	</p>
+	<%= @animal.talk %>
+	
+</div>
+
+<%= link_to 'Back', sti_animal_path(@race), class: 'btn btn-primary' %>
+<%= link_to 'Home', sti_animal_path, class: 'btn btn-default' %>

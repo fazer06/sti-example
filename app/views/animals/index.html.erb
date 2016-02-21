@@ -1,0 +1,22 @@
+<h1><%= "Animal Type: #{@race.pluralize}" %></h1>
+
+<% @animals.each do |animal| %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= animal.race %>
+  </div>
+  <div class="panel-body">
+    <p>
+      My name is <%= animal.name %><br>
+      I'm <%= animal.age %> years old   
+    </p>
+
+  </div>
+  <div class="panel-footer">
+    <%= link_to 'Show', sti_animal_path(animal.race, animal) %> 
+    <%= link_to 'Edit', sti_animal_path(animal.race, animal, :edit) %>
+    <%= link_to 'Destroy', sti_animal_path(animal.race, animal), 
+        method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
+<% end %>
